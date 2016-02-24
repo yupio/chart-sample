@@ -1,0 +1,58 @@
+.row
+  .col-lg-6
+    
+    .div(
+      chart-sample-plot = ""
+      chart-sample-plot-width = "chartSampleCtrl.width"
+      chart-sample-plot-height = "chartSampleCtrl.height"
+      chart-sample-plot-chart-object = "chartSampleCtrl.chartObject"
+    )
+  .col-lg-6
+
+.row
+  .col-lg-6
+    .form-group
+      label.
+        Chart Title
+      input.form-control(
+        type = "text"
+        ng-model = "chartSampleCtrl.chartTitle"
+      )
+  .col-lg-6
+
+.form-inline(
+  ng-repeat = "item in chartSampleCtrl.items" 
+)
+  .form-group
+    label.
+      Name
+    input(
+      type = "text"
+      ng-model = "item.name"
+    )
+  .form-group
+    label.
+      Count
+    input(
+      type = "number"
+      ng-model = "item.count"
+    )
+  .glyphicon.glyphicon-minus(
+    ng-click = "chartSampleCtrl.removeField($index)"
+  )
+
+.row
+  .col-lg-12
+
+    button.margin-4(
+      ng-click = "chartSampleCtrl.updateChart()"
+    ) Update
+
+    button.margin-4(
+      ng-click = "chartSampleCtrl.clearChart()"
+    ) Clear
+
+    .glyphicon.glyphicon-plus.margin-4(
+      ng-click = "chartSampleCtrl.addField()"
+    ) 
+    span Add Row

@@ -1,0 +1,19 @@
+doctype html
+html(
+  lang          = "en",
+  ng-app        = "example",
+  ng-controller = "MainController"
+)
+  head
+    title Sample Chart
+    link(rel="stylesheet", href="/css/app.css")
+    link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css")
+
+    if development
+      script(src="/js/vendor.js")
+      script(src="/js/components.js")
+      script(src="/js/main.js")
+    else
+      script(src="/js/app.js")
+  body
+    ng-view

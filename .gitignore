@@ -1,0 +1,10 @@
+tmp/*
+node_modules/*
+build/*
+example/build/*
+vendor/bower/*
+coverage/*
+selenium/*
+.sass-cache/*
+.grunt/*
+.DS_Store
